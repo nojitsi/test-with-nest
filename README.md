@@ -16,7 +16,9 @@ Test app made with nest
 ```bash
 npm install
 cp .env.example .env
-#if you do not have docker installed on pc, pls connect to you'r locally installed postgres
+#Change credentials if needed.
+#if you do not have docker installed, pls connect to your locally installed postgres
+#Edit db/01-init.sh if you did change credentials.
 docker-compose up -d
 npx prisma migrate dev
 ```
