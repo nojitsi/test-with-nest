@@ -1,0 +1,12 @@
+entity: car
+items:
+  car1:
+    name: 'Toyota'
+    userId: 2
+    color: 'coolColor'
+    seats: 4
+  car2:
+    name: 'FastToyota'
+    userId: 3
+    color: 'veryCoolColor'
+    seats: 2

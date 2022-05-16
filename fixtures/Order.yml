@@ -1,0 +1,39 @@
+entity: order
+items:
+  order1:
+    clientId: 1
+    driverId: 2
+    from: 'StartPoint'
+    to: 'FinishPointA'
+    price: 1000
+    
+  order2:
+    clientId: 1
+    driverId: 2
+    from: 'StartPoint'
+    to: 'FinishPointA'
+    price: 1000
+  order3:
+    clientId: 1
+    driverId: 2
+    from: 'StartPoint'
+    to: 'FinishPointB'
+    price: 2050
+  order4:
+    clientId: 1
+    driverId: 3
+    from: 'StartPoint'
+    to: 'FinishPointB'
+    price: 2000
+  order5:
+    clientId: 1
+    driverId: 3
+    from: 'StartPoint'
+    to: 'FinishPointB'
+    price: 2000
+  order6:
+    clientId: 1
+    driverId: 3
+    from: 'StartPoint'
+    to: 'FinishPointA'
+    price: 1066

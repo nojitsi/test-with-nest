@@ -1,0 +1,21 @@
+version: '3'
+
+services:
+  postgres:
+    image: postgres:14.2
+    healthcheck:
+      test: [ "CMD", "pg_isready", "-q", "-d", "postgres", "-U", "root" ]
+      timeout: 45s
+      interval: 10s
+      retries: 10
+    restart: always
+    environment:
+      - POSTGRES_USER=root  
+      - POSTGRES_PASSWORD=root
+      - APP_DB_USER=root
+      - APP_DB_PASS=root
+      - APP_DB_NAME=taxi-base
+    volumes:
+      - ./db:/docker-entrypoint-initdb.d/
+    ports:
+     - 127.0.0.1:5433:5432

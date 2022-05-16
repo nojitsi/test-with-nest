@@ -1,0 +1,14 @@
+entity: user
+items:
+  user1:
+    name: '{{name.firstName}}'
+    email: '{{internet.email}}'
+    type: CLIENT
+  user2:
+    name: '{{name.firstName}}'
+    email: '{{internet.email}}'
+    type: DRIVER
+  user3:
+    name: '{{name.firstName}}'
+    email: '{{internet.email}}'
+    type: DRIVER
