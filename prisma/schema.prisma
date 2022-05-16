@@ -46,7 +46,7 @@ model Order {
   from String
   to   String
 
-  startedAt  DateTime? @default(now())
+  startedAt  DateTime?
   finishedAt DateTime?
   price      Int?
   @@index([to])
