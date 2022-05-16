@@ -113,6 +113,12 @@ export class OrderService {
   }
 
   async finishOrderTrip(orderId: number): Promise<Order> {
+    if (!(await this.orderHasDriver(orderId))) {
+      throw new OrderIsHandled(
+        'Pls apply to the order before trying to start trip.',
+      )
+    }
+
     if (!(await this.orderIsAlreadyStarted(orderId))) {
       throw new TripHasNotStarted('Pls start trip before finishing it.')
     }
