@@ -1,0 +1,209 @@
+{
+	"info": {
+		"_postman_id": "f9523851-9a76-4f8f-9a2f-9612b21551aa",
+		"name": "NestTaxiTest",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Create Order",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "from",
+							"value": "11",
+							"type": "text"
+						},
+						{
+							"key": "to",
+							"value": "ggg",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{host}}/order?from=47.28112222",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"order"
+					],
+					"query": [
+						{
+							"key": "from",
+							"value": "47.28112222"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ApplyRide",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/order/apply/8",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"order",
+						"apply",
+						"8"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "StartRide",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/order/start/8",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"order",
+						"start",
+						"8"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "EndRide",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/order/end/7",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"order",
+						"end",
+						"7"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Order Quantity",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/stat/order-quantity/3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"stat",
+						"order-quantity",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetTotalOrderSum",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/stat/total-order-sum/2",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"stat",
+						"total-order-sum",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetDriverMostOftenDestination",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/stat/most-often-destination/2",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"stat",
+						"most-often-destination",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetAverageTripDUration",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/stat/most-often-destination/2",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"stat",
+						"most-often-destination",
+						"2"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "host",
+			"value": "http://localhost:3000"
+		}
+	]
+}
