@@ -18,38 +18,6 @@ export class OrderService {
     private readonly calculatorService: CalculatorService,
   ) {}
 
-  private async clientPassedOrderLimit(clientId: number): Promise<boolean> {
-    const clientOrders = await this.orderRepository.find({
-      client: {
-        id: clientId,
-      },
-      finishedAt: null,
-    })
-
-    return clientOrders.length > USER_ORDERS_LIMIT
-  }
-
-  private async orderHasDriver(orderId: number): Promise<boolean> {
-    const order = await this.orderRepository.findOne({
-      id: orderId,
-    })
-    return order.driverId !== null
-  }
-
-  private async orderIsAlreadyStarted(orderId: number): Promise<boolean> {
-    const order = await this.orderRepository.findOne({
-      id: orderId,
-    })
-    return order.startedAt !== null
-  }
-
-  private async orderIsAlreadyFinished(orderId: number): Promise<boolean> {
-    const order = await this.orderRepository.findOne({
-      id: orderId,
-    })
-    return order.finishedAt !== null
-  }
-
   async registerOrder(
     from: string,
     to: string,
@@ -137,5 +105,37 @@ export class OrderService {
         await this.orderRepository.findOne(orderWhereUniqueInput),
       ),
     })
+  }
+
+  private async clientPassedOrderLimit(clientId: number): Promise<boolean> {
+    const clientOrders = await this.orderRepository.find({
+      client: {
+        id: clientId,
+      },
+      finishedAt: null,
+    })
+
+    return clientOrders.length > USER_ORDERS_LIMIT
+  }
+
+  private async orderHasDriver(orderId: number): Promise<boolean> {
+    const order = await this.orderRepository.findOne({
+      id: orderId,
+    })
+    return order.driverId !== null
+  }
+
+  private async orderIsAlreadyStarted(orderId: number): Promise<boolean> {
+    const order = await this.orderRepository.findOne({
+      id: orderId,
+    })
+    return order.startedAt !== null
+  }
+
+  private async orderIsAlreadyFinished(orderId: number): Promise<boolean> {
+    const order = await this.orderRepository.findOne({
+      id: orderId,
+    })
+    return order.finishedAt !== null
   }
 }
