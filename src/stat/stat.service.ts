@@ -12,12 +12,15 @@ export class StatService {
       },
     })
   }
+
   getDriverOrdersPriceTotalSumm(driverId: number): Promise<number> {
     return this.orderRepository.sum('price', { driverId })
   }
+
   getMostOftenDriverDestination(driverId: number): Promise<string | null> {
     return this.orderRepository.getMostOccuredFieldValue('to', { driverId })
   }
+
   async getAverageDriverTripDuration(driverId: number): Promise<string> {
     const averageDriverTripDuration =
       await this.orderRepository.getAverageTripDuration(driverId)
