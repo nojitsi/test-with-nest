@@ -1,5 +1,5 @@
 import { Controller, Get, Param, ParseIntPipe } from '@nestjs/common'
-import { SYSTEM_CURRENCY } from 'src/constants'
+import { PRICE_MULTIPLIER, SYSTEM_CURRENCY } from 'src/constants'
 import { StatService } from './stat.service'
 
 @Controller('stat')
@@ -19,7 +19,7 @@ export class StatController {
   ): Promise<string> {
     return `${
       Number(await this.statService.getDriverOrdersPriceTotalSum(driverId)) /
-      100
+      PRICE_MULTIPLIER
     } ${SYSTEM_CURRENCY}`
   }
 
