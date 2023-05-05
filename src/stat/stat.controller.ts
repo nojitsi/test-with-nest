@@ -18,7 +18,7 @@ export class StatController {
     @Param('driverId', ParseIntPipe) driverId,
   ): Promise<string> {
     return `${
-      Number(await this.statService.getDriverOrdersPriceTotalSumm(driverId)) /
+      Number(await this.statService.getDriverOrdersPriceTotalSum(driverId)) /
       100
     } ${SYSTEM_CURRENCY}`
   }

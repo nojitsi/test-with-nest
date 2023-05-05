@@ -13,7 +13,7 @@ export class StatService {
     })
   }
 
-  getDriverOrdersPriceTotalSumm(driverId: number): Promise<number> {
+  getDriverOrdersPriceTotalSum(driverId: number): Promise<number> {
     return this.orderRepository.sum('price', { driverId })
   }
 
