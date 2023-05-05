@@ -25,7 +25,7 @@ export class StatService {
     const averageDriverTripDuration =
       await this.orderRepository.getAverageTripDuration(driverId)
     return averageDriverTripDuration
-      ? `Avarage driver trip: ${averageDriverTripDuration}`
+      ? `Average driver trip: ${averageDriverTripDuration}`
       : 'No finished driver trips found.'
   }
 }
